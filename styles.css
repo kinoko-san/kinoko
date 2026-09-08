@@ -1,0 +1,434 @@
+/* ============================================================
+   KINOKO  —  ghost in the shell (1995) inspired styling
+   deep teal terminal / holographic HUD / spore-lit dark
+   ============================================================ */
+
+:root {
+  --bg:        #04080a;
+  --bg-panel:  rgba(8, 20, 22, 0.55);
+  --ink:       #9fb8b4;
+  --ink-dim:   #587470;
+  --teal:      #57e6d9;
+  --teal-deep: #1f8f86;
+  --amber:     #e8a13c;
+  --amber-dim: #7a5a24;
+  --grid:      rgba(87, 230, 217, 0.06);
+  --scan:      rgba(0, 0, 0, 0.28);
+  --glow:      #57e6d9;
+  --danger:    #e0523c;
+  --mono: "SFMono-Regular", "SF Mono", "JetBrains Mono", "Menlo",
+          "Consolas", "Liberation Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- ambient field: grid + radial spore light -------------------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 42%,
+      rgba(87, 230, 217, 0.10), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 50% 120%,
+      rgba(232, 161, 60, 0.06), transparent 70%),
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 100% 34px,
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 34px 100%;
+}
+
+/* ---- scanlines + flicker (CRT / thermoptic) --------------------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    var(--scan) 2px 3px
+  );
+  mix-blend-mode: multiply;
+  animation: flicker 6s infinite steps(60);
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.55; }
+  47%      { opacity: 0.5; }
+  48%      { opacity: 0.7; }
+  49%      { opacity: 0.5; }
+  93%      { opacity: 0.58; }
+  94%      { opacity: 0.42; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
+  * { animation-duration: 0.001s !important; animation-iteration-count: 1 !important; }
+}
+
+/* ============================================================
+   HUD frame
+   ============================================================ */
+
+.hud {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  padding: 18px;
+}
+
+.hud__corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--teal-deep);
+}
+.hud__corner--tl { top: 14px;    left: 14px;    border-right: 0; border-bottom: 0; }
+.hud__corner--tr { top: 14px;    right: 14px;   border-left: 0;  border-bottom: 0; }
+.hud__corner--bl { bottom: 14px; left: 14px;    border-right: 0; border-top: 0; }
+.hud__corner--br { bottom: 14px; right: 14px;   border-left: 0;  border-top: 0; }
+
+.hud__label {
+  position: absolute;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.hud__label--top    { top: 16px;    left: 50%; transform: translateX(-50%); }
+.hud__label--bottom { bottom: 16px; left: 50%; transform: translateX(-50%); color: var(--teal-deep); }
+.hud__label--right  {
+  top: 50%; right: 6px;
+  transform: rotate(90deg);
+  transform-origin: right center;
+}
+
+/* ============================================================
+   layout
+   ============================================================ */
+
+.shell {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 20px 40px;
+}
+
+.topbar {
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  border-bottom: 1px solid rgba(87, 230, 217, 0.12);
+  padding-bottom: 10px;
+}
+
+.topbar a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.topbar a:hover,
+.topbar a:focus-visible {
+  color: var(--teal);
+  text-shadow: 0 0 8px var(--glow);
+  outline: none;
+}
+.topbar__sep { color: var(--amber-dim); margin: 0 8px; }
+
+.readout {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   hero — mushroom + wordmark
+   ============================================================ */
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 30px 0 12px;
+}
+
+.mushroom-stage {
+  position: relative;
+  width: min(70vw, 340px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+
+.mushroom-stage svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* holographic scan pass over the mushroom */
+.mushroom-stage::after {
+  content: "";
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  height: 42%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(87, 230, 217, 0.14) 45%,
+    rgba(87, 230, 217, 0.30) 50%,
+    rgba(87, 230, 217, 0.14) 55%,
+    transparent
+  );
+  mix-blend-mode: screen;
+  animation: scan-pass 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes scan-pass {
+  0%, 100% { transform: translateY(-120%); opacity: 0; }
+  10%      { opacity: 1; }
+  50%      { transform: translateY(150%); opacity: 1; }
+  60%, 100%{ opacity: 0; }
+}
+
+.wordmark {
+  margin: 18px 0 0;
+  font-size: clamp(2.2rem, 9vw, 4.4rem);
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;               /* balance the trailing space */
+  color: #d6f5f1;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 6px rgba(87, 230, 217, 0.9),
+    0 0 22px rgba(87, 230, 217, 0.55),
+    0 0 48px rgba(87, 230, 217, 0.28);
+  position: relative;
+}
+
+.wordmark[data-glitch]::before,
+.wordmark[data-glitch]::after {
+  content: attr(data-glitch);
+  position: absolute;
+  inset: 0;
+  text-indent: 0.42em;
+}
+.wordmark[data-glitch]::before {
+  color: var(--amber);
+  mix-blend-mode: screen;
+  animation: glitch-x 4.2s infinite steps(2);
+  clip-path: inset(0 0 62% 0);
+}
+.wordmark[data-glitch]::after {
+  color: var(--teal);
+  mix-blend-mode: screen;
+  animation: glitch-x 3.1s infinite reverse steps(2);
+  clip-path: inset(58% 0 0 0);
+}
+
+@keyframes glitch-x {
+  0%, 82%, 100% { transform: translate(0, 0); opacity: 0; }
+  83%  { transform: translate(-2px, 1px);  opacity: 0.9; }
+  86%  { transform: translate(3px, -1px);  opacity: 0.6; }
+  90%  { transform: translate(-1px, 0);    opacity: 0.8; }
+}
+
+.wordmark-sub {
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  color: var(--teal-deep);
+  margin-top: 14px;
+}
+
+/* ============================================================
+   haiku panel
+   ============================================================ */
+
+.haiku {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 560px;
+  margin: 8px auto 0;
+  padding: 26px 30px 22px;
+  background: var(--bg-panel);
+  border: 1px solid rgba(87, 230, 217, 0.22);
+  backdrop-filter: blur(2px);
+}
+
+/* corner brackets */
+.haiku::before,
+.haiku::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--amber);
+}
+.haiku::before { top: -1px;    left: -1px;  border-right: 0; border-bottom: 0; }
+.haiku::after  { bottom: -1px; right: -1px; border-left: 0;  border-top: 0; }
+
+.haiku__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 16px;
+}
+.haiku__head .dot {
+  color: var(--teal);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+.haiku__body {
+  font-size: clamp(1.05rem, 3.6vw, 1.4rem);
+  line-height: 2;
+  color: #cfeeea;
+  text-shadow: 0 0 10px rgba(87, 230, 217, 0.35);
+  min-height: 6em;
+}
+.haiku__body .line { display: block; white-space: pre-wrap; }
+.haiku__body .caret {
+  display: inline-block;
+  width: 0.6ch;
+  background: var(--teal);
+  color: transparent;
+  animation: pulse 1s steps(1) infinite;
+}
+
+.haiku__foot {
+  margin-top: 18px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  display: flex;
+  justify-content: space-between;
+}
+
+.haiku.is-error .haiku__body { color: var(--danger); text-shadow: none; }
+
+/* ============================================================
+   footer
+   ============================================================ */
+
+.footer {
+  width: 100%;
+  max-width: 880px;
+  margin-top: 34px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(87, 230, 217, 0.12);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.footer a { color: var(--teal-deep); text-decoration: none; }
+.footer a:hover { color: var(--teal); text-shadow: 0 0 8px var(--glow); }
+
+/* ============================================================
+   about page
+   ============================================================ */
+
+.doc {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 640px;
+  margin: 10px auto 0;
+  padding: 34px 38px 30px;
+  background: var(--bg-panel);
+  border: 1px solid rgba(87, 230, 217, 0.22);
+  backdrop-filter: blur(2px);
+}
+.doc::before,
+.doc::after {
+  content: "";
+  position: absolute;
+  width: 16px; height: 16px;
+  border: 1px solid var(--amber);
+}
+.doc::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.doc::after  { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+.doc h1 {
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  font-weight: 400;
+  margin: 0 0 24px;
+  border-bottom: 1px solid rgba(87, 230, 217, 0.14);
+  padding-bottom: 12px;
+}
+
+.doc p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #cfeeea;
+  margin: 0 0 18px;
+}
+.doc p .accent { color: var(--teal); text-shadow: 0 0 10px rgba(87,230,217,.4); }
+.doc p .jp { color: var(--amber); letter-spacing: 0.1em; }
+
+.doc dl {
+  margin: 26px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.doc dl div { display: flex; gap: 14px; padding: 6px 0; border-top: 1px solid rgba(87,230,217,.08); }
+.doc dt { min-width: 130px; color: var(--teal-deep); }
+.doc dd { margin: 0; color: var(--ink); }
+.doc dd a { color: var(--teal); text-decoration: none; }
+.doc dd a:hover { text-shadow: 0 0 8px var(--glow); }
+
+/* ============================================================
+   responsive
+   ============================================================ */
+
+@media (max-width: 560px) {
+  .shell { padding: 44px 14px 30px; }
+  .hud__label--right { display: none; }
+  .haiku, .doc { padding-left: 20px; padding-right: 20px; }
+  .topbar { font-size: 10px; letter-spacing: 0.14em; }
+}

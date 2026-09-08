@@ -1,0 +1,41 @@
+name: daily haiku
+
+on:
+  schedule:
+    # 00:00 UTC == 09:00 Asia/Tokyo. GitHub may delay cron a few minutes.
+    - cron: "0 0 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-haiku
+  cancel-in-progress: false
+
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Compose today's haiku
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-haiku.mjs
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "kinoko-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- haiku.json; then
+            echo "no change"
+            exit 0
+          fi
+          git add haiku.json
+          git commit -m "spore: $(date -u +%Y-%m-%d) [skip ci]"
+          git push
