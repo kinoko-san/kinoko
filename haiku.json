@@ -1,11 +1,11 @@
 {
-  "date": "2026-09-13",
-  "cycle": 6,
+  "date": "2026-09-14",
+  "cycle": 7,
   "lines": [
-    "Spores drift through wet dark",
-    "Mycelium spreads unseen",
-    "Autumn feeds below"
+    "spores drift through wet dark",
+    "mycelium spreads below",
+    "autumn feeds the earth"
   ],
   "source": "claude:claude-haiku-4-5-20251001",
-  "generated_at": "2026-09-13T00:24:57.633Z"
+  "generated_at": "2026-09-14T00:25:35.353Z"
 }
