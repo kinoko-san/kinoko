@@ -1,11 +1,11 @@
 {
-  "date": "2026-09-18",
-  "cycle": 11,
+  "date": "2026-09-19",
+  "cycle": 12,
   "lines": [
-    "Autumn rain darkens",
-    "the log's soft flesh blooms with caps",
-    "spores drift like whispers"
+    "Autumn rain falls soft",
+    "Toadstools push through rotting leaves",
+    "Night feeds what is dark"
   ],
   "source": "claude:claude-haiku-4-5-20251001",
-  "generated_at": "2026-09-18T00:23:25.892Z"
+  "generated_at": "2026-09-19T00:23:12.992Z"
 }
