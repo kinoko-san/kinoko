@@ -1,11 +1,11 @@
 {
-  "date": "2026-09-20",
-  "cycle": 13,
+  "date": "2026-09-21",
+  "cycle": 14,
   "lines": [
-    "Autumn rain softens",
-    "The veil between worlds grows thin",
-    "Spores drift through the dark"
+    "Spores drift through grey rain",
+    "Unseen threads beneath the moss",
+    "Autumn claims the dark"
   ],
   "source": "claude:claude-haiku-4-5-20251001",
-  "generated_at": "2026-09-20T00:24:57.129Z"
+  "generated_at": "2026-09-21T00:24:11.777Z"
 }
