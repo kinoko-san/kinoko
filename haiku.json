@@ -1,11 +1,11 @@
 {
-  "date": "2026-09-27",
-  "cycle": 20,
+  "date": "2026-09-28",
+  "cycle": 21,
   "lines": [
-    "Autumn rain softens",
-    "The veil lifts from dark mushrooms",
-    "We breathe their spores now"
+    "Umbrella of rot",
+    "Spores drift through autumn's damp air",
+    "Earth breathes back to us"
   ],
   "source": "claude:claude-haiku-4-5-20251001",
-  "generated_at": "2026-09-27T00:24:56.450Z"
+  "generated_at": "2026-09-28T00:26:22.994Z"
 }
