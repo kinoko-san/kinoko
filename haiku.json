@@ -1,11 +1,11 @@
 {
-  "date": "2026-09-28",
-  "cycle": 21,
+  "date": "2026-09-29",
+  "cycle": 22,
   "lines": [
-    "Umbrella of rot",
-    "Spores drift through autumn's damp air",
-    "Earth breathes back to us"
+    "Autumn rain falls soft",
+    "White caps push through black soil's seam",
+    "Spores drift into dusk"
   ],
   "source": "claude:claude-haiku-4-5-20251001",
-  "generated_at": "2026-09-28T00:26:22.994Z"
+  "generated_at": "2026-09-29T00:24:45.660Z"
 }
