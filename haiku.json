@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-05",
-  "cycle": 28,
+  "date": "2026-10-06",
+  "cycle": 29,
   "lines": [
     "Autumn rain darkens",
-    "Mycelium spreads below",
-    "Unseen, patient growth"
+    "Spores drift through the rotting log",
+    "Life feeds on the dead"
   ],
   "source": "claude:claude-haiku-4-5-20251001",
-  "generated_at": "2026-10-05T00:27:56.045Z"
+  "generated_at": "2026-10-06T00:28:18.914Z"
 }
