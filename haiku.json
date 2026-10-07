@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-06",
-  "cycle": 29,
+  "date": "2026-10-07",
+  "cycle": 30,
   "lines": [
     "Autumn rain darkens",
-    "Spores drift through the rotting log",
-    "Life feeds on the dead"
+    "Spores drift through the rot-sweet air",
+    "Earth exhales at dusk"
   ],
   "source": "claude:claude-haiku-4-5-20251001",
-  "generated_at": "2026-10-06T00:28:18.914Z"
+  "generated_at": "2026-10-07T00:29:01.087Z"
 }
