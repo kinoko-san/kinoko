@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-08",
-  "cycle": 31,
+  "date": "2026-10-09",
+  "cycle": 32,
   "lines": [
-    "Autumn rain falls soft",
-    "Umbrella of toadstools blooms",
-    "Earth drinks what sky gives"
+    "Autumn rain softens",
+    "The veil lifts from dark fruiting",
+    "Spores drift through the dusk"
   ],
   "source": "claude:claude-haiku-4-5-20251001",
-  "generated_at": "2026-10-08T00:27:30.173Z"
+  "generated_at": "2026-10-09T00:30:42.573Z"
 }
