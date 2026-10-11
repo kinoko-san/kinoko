@@ -2,8 +2,9 @@ name: daily haiku
 
 on:
   schedule:
-    # 00:00 UTC == 09:00 Asia/Tokyo. GitHub may delay cron a few minutes.
-    - cron: "0 0 * * *"
+    # 15:00 UTC == 00:00 Asia/Tokyo (midnight JST). GitHub cron is
+    # best-effort: runs can start minutes to hours late.
+    - cron: "0 15 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -17,11 +18,11 @@ jobs:
   compose:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Compose today's haiku
         env:
@@ -37,5 +38,15 @@ jobs:
             exit 0
           fi
           git add haiku.json
-          git commit -m "spore: $(date -u +%Y-%m-%d) [skip ci]"
+          git commit -m "spore: $(TZ=Asia/Tokyo date +%Y-%m-%d) [skip ci]"
           git push
+
+      # The commit above has already published the fallback haiku, so the
+      # shrine keeps refreshing. This step only turns the run red so GitHub
+      # emails the person who last edited the cron line.
+      - name: Fail loudly if the API call fell back
+        run: |
+          if grep -q '"source": "fallback"' haiku.json; then
+            echo "::error title=Claude API call failed::Published a fallback haiku. Check ANTHROPIC_API_KEY (expiry/credit) and the model ID in scripts/generate-haiku.mjs."
+            exit 1
+          fi
