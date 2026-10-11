@@ -1,8 +1,8 @@
 /* ============================================================
    generate-haiku.mjs
    Composes one mushroom-themed haiku (5-7-5) and overwrites
-   ../haiku.json. Run daily by GitHub Actions at 00:00 UTC
-   (09:00 Asia/Tokyo).
+   ../haiku.json. Run daily by GitHub Actions at 15:00 UTC
+   (00:00 Asia/Tokyo, midnight JST).
 
    Requires env ANTHROPIC_API_KEY. Falls back to a local pool
    if the API is unreachable so the shrine always refreshes.
@@ -15,7 +15,7 @@ import { dirname, join } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, "..", "haiku.json");
 
-const MODEL = process.env.KINOKO_MODEL || "claude-haiku-4-5-20251001";
+const MODEL = process.env.KINOKO_MODEL || "claude-haiku-5-5";
 const API_KEY = process.env.ANTHROPIC_API_KEY;
 
 /* ---- today's date in Asia/Tokyo ------------------------------- */
@@ -67,8 +67,10 @@ async function compose() {
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 256,
-      temperature: 1,
+      // Haiku 5.5 runs adaptive thinking by default and counts it against
+      // max_tokens, so leave generous headroom. It also rejects non-default
+      // sampling params (temperature/top_p/top_k), so none are sent.
+      max_tokens: 4096,
       system:
         "You are Kinoko-san, keeper of a daily mushroom haiku shrine. " +
         "Compose ONE haiku in English, three lines, roughly 5-7-5 syllables. " +
@@ -99,7 +101,12 @@ async function compose() {
     .trim();
 
   const match = text.match(/\{[\s\S]*\}/);
-  if (!match) throw new Error("no JSON in model reply: " + text.slice(0, 200));
+  if (!match) {
+    throw new Error(
+      `no JSON in model reply (stop_reason=${data.stop_reason}): ` +
+        text.slice(0, 200)
+    );
+  }
   const parsed = JSON.parse(match[0]);
   const lines = (parsed.lines || [])
     .map((l) => String(l).trim())
