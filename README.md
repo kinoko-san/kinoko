@@ -7,7 +7,8 @@ deep-teal terminal, scanlines, holographic bloom, a glowing digital mushroom.
   today's haiku.
 - **About** (`about.html`) — Kinoko-san's dossier.
 - **Ephemeral by design** — only one haiku exists at a time. Each day at
-  **09:00 JST** a new one overwrites `haiku.json`. Nothing is archived.
+  **00:00 JST** (midnight in Tokyo) a new one overwrites `haiku.json`.
+  Nothing is archived.
 
 Static HTML/CSS/JS. No build step, no dependencies. The only moving part is a
 GitHub Action that rewrites `haiku.json` once a day.
@@ -15,10 +16,12 @@ GitHub Action that rewrites `haiku.json` once a day.
 ## How the daily haiku works
 
 `.github/workflows/daily-haiku.yml` runs `scripts/generate-haiku.mjs` on a cron
-(`0 0 * * *` = 00:00 UTC = 09:00 Asia/Tokyo). The script calls the Claude API
+(`0 15 * * *` = 15:00 UTC = 00:00 Asia/Tokyo). The script calls the Claude API
 for a fresh 5·7·5 mushroom haiku, overwrites `haiku.json`, and commits it back
 to the branch. GitHub Pages redeploys automatically. If the API call fails the
-script falls back to a bundled pool so the shrine still refreshes.
+script falls back to a bundled pool so the shrine still refreshes, and the
+workflow then fails on purpose so GitHub emails you (usual causes: expired API
+key, no credit, retired model ID).
 
 ## First-time setup
 
@@ -87,15 +90,20 @@ ANTHROPIC_API_KEY=sk-ant-... node scripts/generate-haiku.mjs
 | Colours / glow / scanlines | `styles.css` `:root` |
 | The mushroom | inline `<svg>` in `index.html` |
 | Haiku voice / rules | `system` prompt in `scripts/generate-haiku.mjs` |
-| Model | `KINOKO_MODEL` env var (default `claude-haiku-4-5-20251001`) |
-| Post time | `cron` in `.github/workflows/daily-haiku.yml` (UTC) |
+| Model | `KINOKO_MODEL` env var (default `claude-haiku-5-5`) |
+| Post time | `cron` in `.github/workflows/daily-haiku.yml` (UTC; `0 15 * * *` is 00:00 JST) |
 | Fallback haiku | `FALLBACK` array in the script |
 | Source link | auto-detected on `*.github.io`; or add `<meta name="kinoko:repo" content="...">` |
 
 ## Notes
 
-- GitHub cron is best-effort and can lag the scheduled minute by several
-  minutes under load. For the shrine's purposes that's fine.
-- Cost is a few hundred tokens per day — effectively nothing.
+- GitHub cron is best-effort: runs have started anywhere from ~30 minutes to
+  several hours after the scheduled time, so the new haiku may appear a little
+  after 00:00 JST. The haiku's `date` is always the Tokyo date at run time.
+- Haiku 5.5 uses adaptive thinking (counted in `max_tokens`) and rejects
+  non-default `temperature`/`top_p`/`top_k`, so the script sends neither. If you
+  switch model family, re-check those request parameters.
+- Cost is at most a few thousand tokens per day (`max_tokens` is 4096) — a few
+  cents a month at most.
 - The commit message carries `[skip ci]` so the auto-commit doesn't retrigger
   other workflows.
