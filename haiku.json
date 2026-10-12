@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-12",
-  "cycle": 35,
+  "date": "2026-10-13",
+  "cycle": 36,
   "lines": [
-    "Rain on cedar floor",
-    "pale caps push up through wet leaves",
-    "spores count the autumn"
+    "autumn rain returns",
+    "pale caps rise through the wet moss",
+    "something counts the dead"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-10-11T19:16:01.962Z"
+  "generated_at": "2026-10-12T22:18:23.457Z"
 }
