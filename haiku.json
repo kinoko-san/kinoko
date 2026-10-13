@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-13",
-  "cycle": 36,
+  "date": "2026-10-14",
+  "cycle": 37,
   "lines": [
-    "autumn rain returns",
-    "pale caps rise through the wet moss",
-    "something counts the dead"
+    "October dusk breathes",
+    "pale gills open in the moss",
+    "the soil keeps their names"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-10-12T22:18:23.457Z"
+  "generated_at": "2026-10-13T20:25:31.249Z"
 }
