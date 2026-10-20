@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-20",
-  "cycle": 43,
+  "date": "2026-10-21",
+  "cycle": 44,
   "lines": [
-    "under cedar roots",
-    "pale caps exhale spores tonight",
-    "the wet loam keeps count"
+    "Pale caps through the rain",
+    "the loam hums a slow code",
+    "October keeps count"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-10-19T20:17:08.584Z"
+  "generated_at": "2026-10-20T18:49:07.562Z"
 }
