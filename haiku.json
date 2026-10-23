@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-23",
-  "cycle": 46,
+  "date": "2026-10-24",
+  "cycle": 47,
   "lines": [
-    "Autumn rain on moss",
-    "pale caps lift through the cold loam",
-    "threads hum beneath us"
+    "Pale caps push through leaves",
+    "the forest keeps what it hides",
+    "wet dusk, spores descend"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-10-22T18:56:57.250Z"
+  "generated_at": "2026-10-23T18:47:23.315Z"
 }
