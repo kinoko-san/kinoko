@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-24",
-  "cycle": 47,
+  "date": "2026-10-25",
+  "cycle": 48,
   "lines": [
-    "Pale caps push through leaves",
-    "the forest keeps what it hides",
-    "wet dusk, spores descend"
+    "late October rain",
+    "a pale cap lifts from the loam",
+    "its threads remember us"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-10-23T18:47:23.315Z"
+  "generated_at": "2026-10-24T17:42:45.486Z"
 }
