@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-25",
-  "cycle": 48,
+  "date": "2026-10-26",
+  "cycle": 49,
   "lines": [
-    "late October rain",
-    "a pale cap lifts from the loam",
-    "its threads remember us"
+    "cold rain, cedar dusk",
+    "pale caps lift through the loam",
+    "the rot remembers my name"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-10-24T17:42:45.486Z"
+  "generated_at": "2026-10-25T17:57:22.245Z"
 }
