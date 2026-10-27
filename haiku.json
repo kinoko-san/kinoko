@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-27",
-  "cycle": 50,
+  "date": "2026-10-28",
+  "cycle": 51,
   "lines": [
-    "Cedar floor, moss-soft",
-    "a pale cap lifts through the rain",
-    "the dusk tallies spores"
+    "cold rain on the stones",
+    "pale caps push through rotting oak",
+    "in the hush below"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-10-26T20:13:01.802Z"
+  "generated_at": "2026-10-27T19:44:59.504Z"
 }
