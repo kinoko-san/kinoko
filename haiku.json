@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-01",
-  "cycle": 55,
+  "date": "2026-11-02",
+  "cycle": 56,
   "lines": [
-    "hyphae thread the dark",
-    "a pale cap lifts through leaves",
-    "the forest keeps its own count"
+    "Cold rain on the duff",
+    "a pale cap lifts from the dark",
+    "spores keep the year's count"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-10-31T18:54:05.472Z"
+  "generated_at": "2026-11-01T19:16:06.388Z"
 }
