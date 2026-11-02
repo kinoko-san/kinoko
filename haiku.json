@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-02",
-  "cycle": 56,
+  "date": "2026-11-03",
+  "cycle": 57,
   "lines": [
-    "Cold rain on the duff",
-    "a pale cap lifts from the dark",
-    "spores keep the year's count"
+    "cold rain on the moss",
+    "a pale cap unfolds in dark",
+    "the forest keeps count"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-01T19:16:06.388Z"
+  "generated_at": "2026-11-02T22:56:43.987Z"
 }
