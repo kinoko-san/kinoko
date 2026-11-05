@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-05",
-  "cycle": 59,
+  "date": "2026-11-06",
+  "cycle": 60,
   "lines": [
-    "Cold rain on the duff",
-    "pale caps lift through wet leaves",
-    "the dead hum below"
+    "caps rise through wet leaves",
+    "under the cedar, spores drift",
+    "still warm where roots sleep"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-04T20:58:53.656Z"
+  "generated_at": "2026-11-05T21:16:01.506Z"
 }
