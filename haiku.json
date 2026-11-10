@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-10",
-  "cycle": 64,
+  "date": "2026-11-11",
+  "cycle": 65,
   "lines": [
-    "Late rain on cedar",
-    "pale caps breathe beneath moss",
-    "it counts down to snow"
+    "the eleventh month's rain",
+    "pale caps drink it under moss",
+    "something hums below"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-09T23:38:33.817Z"
+  "generated_at": "2026-11-10T21:05:42.718Z"
 }
