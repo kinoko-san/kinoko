@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-11",
-  "cycle": 65,
+  "date": "2026-11-12",
+  "cycle": 66,
   "lines": [
-    "the eleventh month's rain",
-    "pale caps drink it under moss",
-    "something hums below"
+    "November rain sings",
+    "in the rotting oak",
+    "pale caps count the dead"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-10T21:05:42.718Z"
+  "generated_at": "2026-11-11T21:38:34.425Z"
 }
