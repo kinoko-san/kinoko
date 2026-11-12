@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-12",
-  "cycle": 66,
+  "date": "2026-11-13",
+  "cycle": 67,
   "lines": [
-    "November rain sings",
-    "in the rotting oak",
-    "pale caps count the dead"
+    "Cold rain on the moss,",
+    "a pale cap lifts from the loam,",
+    "spores drift through the dusk"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-11T21:38:34.425Z"
+  "generated_at": "2026-11-12T21:38:33.075Z"
 }
