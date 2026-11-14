@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-14",
-  "cycle": 68,
+  "date": "2026-11-15",
+  "cycle": 69,
   "lines": [
-    "November drizzle",
-    "pale caps lift from the oak's rot",
-    "the soil keeps each name"
+    "November rain falls",
+    "on the ginkgo's fallen gold",
+    "a pale cap wakes, unbidden"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-13T21:04:12.804Z"
+  "generated_at": "2026-11-14T19:33:53.819Z"
 }
