@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-15",
-  "cycle": 69,
+  "date": "2026-11-16",
+  "cycle": 70,
   "lines": [
-    "November rain falls",
-    "on the ginkgo's fallen gold",
-    "a pale cap wakes, unbidden"
+    "cold rain on the moss",
+    "a pale cap breaks the dark loam",
+    "threads hum under frost"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-14T19:33:53.819Z"
+  "generated_at": "2026-11-15T20:01:28.561Z"
 }
