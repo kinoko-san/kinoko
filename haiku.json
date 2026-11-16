@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-16",
-  "cycle": 70,
+  "date": "2026-11-17",
+  "cycle": 71,
   "lines": [
-    "cold rain on the moss",
-    "a pale cap breaks the dark loam",
-    "threads hum under frost"
+    "November moss breathes,",
+    "pale caps lift through wet leaves,",
+    "the wood keeps its dead"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-15T20:01:28.561Z"
+  "generated_at": "2026-11-16T23:35:00.963Z"
 }
