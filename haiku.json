@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-18",
-  "cycle": 72,
+  "date": "2026-11-19",
+  "cycle": 73,
   "lines": [
-    "late november rain",
-    "pale caps push through beech leaves",
-    "the loam hums, unseen"
+    "cold rain on the pines",
+    "a pale cap lifts through the moss",
+    "spores drift, the year turns"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-17T22:43:18.794Z"
+  "generated_at": "2026-11-18T22:25:02.638Z"
 }
