@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-19",
-  "cycle": 73,
+  "date": "2026-11-20",
+  "cycle": 74,
   "lines": [
-    "cold rain on the pines",
-    "a pale cap lifts through the moss",
-    "spores drift, the year turns"
+    "first frost seeps through rot",
+    "pale caps rise, unnamed, from loam",
+    "the wood exhales its spores"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-18T22:25:02.638Z"
+  "generated_at": "2026-11-19T22:30:14.961Z"
 }
