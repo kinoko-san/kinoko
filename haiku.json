@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-20",
-  "cycle": 74,
+  "date": "2026-11-21",
+  "cycle": 75,
   "lines": [
-    "first frost seeps through rot",
-    "pale caps rise, unnamed, from loam",
-    "the wood exhales its spores"
+    "late November rain",
+    "pale caps lift through wet leaf-mold",
+    "the dark keeps my name"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-19T22:30:14.961Z"
+  "generated_at": "2026-11-20T22:02:06.115Z"
 }
