@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-21",
-  "cycle": 75,
+  "date": "2026-11-22",
+  "cycle": 76,
   "lines": [
-    "late November rain",
-    "pale caps lift through wet leaf-mold",
-    "the dark keeps my name"
+    "Cold rain on the logs",
+    "pale caps lift through the wet dark",
+    "late November hush"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-20T22:02:06.115Z"
+  "generated_at": "2026-11-21T20:42:31.012Z"
 }
