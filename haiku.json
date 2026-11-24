@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-23",
-  "cycle": 77,
+  "date": "2026-11-24",
+  "cycle": 78,
   "lines": [
-    "late November rain",
-    "pale caps seed the cedar dark",
-    "something hums beneath the moss"
+    "Late autumn drizzle",
+    "pale caps lift from the cold loam",
+    "something counts my breath"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-22T20:52:38.459Z"
+  "generated_at": "2026-11-24T01:56:56.235Z"
 }
