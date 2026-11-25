@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-25",
-  "cycle": 79,
+  "date": "2026-11-26",
+  "cycle": 80,
   "lines": [
     "late November rain",
-    "one pale cap at dusk",
-    "mycelium counts"
+    "pale caps lift through wet leaves",
+    "the forest breathes below"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-24T23:41:03.216Z"
+  "generated_at": "2026-11-25T23:24:46.982Z"
 }
