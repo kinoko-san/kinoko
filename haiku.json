@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-26",
-  "cycle": 80,
+  "date": "2026-11-27",
+  "cycle": 81,
   "lines": [
-    "late November rain",
-    "pale caps lift through wet leaves",
-    "the forest breathes below"
+    "November rain",
+    "pale caps rise through the frost",
+    "below, threads whisper"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-25T23:24:46.982Z"
+  "generated_at": "2026-11-26T23:24:04.797Z"
 }
