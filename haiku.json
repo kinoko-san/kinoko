@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-27",
-  "cycle": 81,
+  "date": "2026-11-28",
+  "cycle": 82,
   "lines": [
-    "November rain",
-    "pale caps rise through the frost",
-    "below, threads whisper"
+    "cedar floor exhales",
+    "a pale cap through cold rain lifts",
+    "gills count the year's end"
   ],
   "source": "claude:claude-haiku-5-5",
-  "generated_at": "2026-11-26T23:24:04.797Z"
+  "generated_at": "2026-11-27T23:03:46.500Z"
 }
